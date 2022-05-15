@@ -15,7 +15,8 @@ def main():
         print(key)
     elif len(answer) > 0:
         key = answer
-
+    
+    key = key.encode()
     fernet = Fernet(key)
 
     def encrypt_file(path):
@@ -36,6 +37,8 @@ def main():
 while True:
     try:
         main()
-    except Exception:
-        print("There was a problem. Let's try again.")
+    except Exception as e:
+        print("There was a problem.")
+        print(repr(e))
+        print("Ignore the previous key. We'll try that again.\n")
 

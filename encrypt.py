@@ -11,12 +11,12 @@ def main():
     if len(answer) == 0:
         key = Fernet.generate_key()
         print("Save this key or else.")
+        key = key.decode()
         print(key)
     elif len(answer) > 0:
         key = answer
 
     fernet = Fernet(key)
-
 
     def encrypt_file(path):
         with open(path, "rb") as f:
@@ -38,3 +38,4 @@ while True:
         main()
     except Exception:
         print("There was a problem. Let's try again.")
+

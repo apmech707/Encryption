@@ -29,5 +29,7 @@ def main():
 while True:
     try:
         main()
-    except Exception:
-        print("There was a problem. Let's try again.")
+    except Exception as e:
+        print("There was a problem.")
+        print(repr(e))
+        print("Let's try that again.\n")

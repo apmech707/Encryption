@@ -10,7 +10,7 @@ def main():
 
     if len(answer) == 0:
         key = Fernet.generate_key()
-        print("Save this key or else.")
+        print("Save this key or else you will loose access to your file.")
         key = key.decode()
         print(key)
     elif len(answer) > 0:
